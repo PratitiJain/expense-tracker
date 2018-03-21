@@ -21,5 +21,6 @@ from expense_app import urls
 
 urlpatterns = [
     url('admin/', admin.site.urls),
+    # included urls of expense_app
     url(r'^', include(urls))
 ]

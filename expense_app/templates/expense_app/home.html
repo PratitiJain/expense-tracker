@@ -7,6 +7,7 @@
             <div class="col-md-3"></div>
             <div class="col-md-6 col-sm-12">
                 <ul id="myul">
+                <!--looping through items of content-->
                     {% for item in content %}
                         <li class="card"
                             style="border: 1px solid rgba(72,72,72,0.1); box-shadow: 0 0 10px  rgba(72, 72, 72, 0.1); padding: 10px;margin: 10px;list-style-type: none;">
@@ -37,7 +38,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {% for key, value in summary.iteritems %}
+                        <!--looping through key value pairs of summary-->
+                        {% for key, value in summary.items %}
                             <tr>
                                 <td>{{ key }}</td>
                                 <td>{{ value }}</td>
