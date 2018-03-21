@@ -1,0 +1,21 @@
+
+body {
+    background: white url("https://raw.githubusercontent.com/buckyroberts/Viberr/master/music/static/music/images/background.png");
+    font-family:"Open Sans";
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+}
+
+/*card{*/
+    /*border: 10px solid crimson;*/
+    /*width: 100%;*/
+/*}*/
+.container{
+margin: 0px;
+}
