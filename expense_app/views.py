@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.views import View
+from django.contrib import messages
 
 from expense_app.models import Expense
 from expense_app.forms import ExpenseForm
@@ -15,10 +16,12 @@ def home(request):
     content = Expense.objects.all().order_by('-date')
     # Dictionary
     summary = {}
+
     # temporary variables
     temp_date = 0
     sum = 0
     count = 0
+
     # looping through content and calculating the cost in the order of date
     for item in content:
         if count == 0:
@@ -32,8 +35,10 @@ def home(request):
             sum = item.cost
             summary[str(item.date.date())] = item.cost
         temp_date = item.date.date()
+
     # print the summary of cost
     print(summary)
+
     # rendering template
     return render(request, 'expense_app/home.html',
                   {'content': content, 'summary': summary})
@@ -56,4 +61,8 @@ class ExpenseFormView(View):
 
         if form.is_valid():
             expense_detail = form.save()
-        return render(request, self.template_name, {'form': form})
+            messages.success(request, "Added Successfully")
+            return redirect('/')
+        else:
+            messages.error(request, "Please enter details correctly")
+            return render(request, self.template_name, {'form': form})
