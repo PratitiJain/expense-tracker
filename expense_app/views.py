@@ -5,9 +5,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib import messages
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from expense_app.models import Expense
 from expense_app.forms import ExpenseForm
+from expense_app.serializers import ExpenseSerializer
 
 
 def home(request):
@@ -68,3 +71,10 @@ class ExpenseFormView(View):
             # flash message
             messages.error(request, "Please enter details correctly")
             return render(request, self.template_name, {'form': form})
+
+
+class ExpanseAPI(APIView):
+    def get(self, request):
+        content = Expense.objects.all()
+        serializer = ExpenseSerializer(content, many=True)
+        return Response(serializer.data)
