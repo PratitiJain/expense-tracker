@@ -1,4 +1,4 @@
-# expenses-app
+# expenses-tracker
 It is a web-app which keeps a track of all the expenses. All you need to do is add the expense. Rest will be done for you!!
 
 ### Installation (python 2.7)
@@ -25,7 +25,7 @@ It is a web-app which keeps a track of all the expenses. All you need to do is a
 open [127.0.0.1:8000](127.0.0.1:8000) in the browser
 
 
-- Apply the migrations
+- Apply the migrations(Already included for ease)
 
 	`python manage.py makemigrations`
 
