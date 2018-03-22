@@ -61,8 +61,10 @@ class ExpenseFormView(View):
 
         if form.is_valid():
             expense_detail = form.save()
+            # flash message
             messages.success(request, "Added Successfully")
             return redirect('/')
         else:
+            # flash message
             messages.error(request, "Please enter details correctly")
             return render(request, self.template_name, {'form': form})

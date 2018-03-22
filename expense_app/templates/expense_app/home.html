@@ -4,6 +4,7 @@
 {% block body %}
     {% if messages %}
         <ul class="messages">
+        <!--looping through messages-->
             {% for message in messages %}
                 <div class="alert alert-info alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert"
@@ -46,7 +47,6 @@
                     <table class="table">
                         <thead>
                         <tr>
-
                             <th>Date</th>
                             <th>Cost</th>
                         </tr>
@@ -64,5 +64,5 @@
                 </div>
             </div>
         </div>
-
+    </div>
 {% endblock %}
