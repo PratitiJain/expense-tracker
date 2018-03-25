@@ -4,7 +4,7 @@
 {% block body %}
     {% if messages %}
         <ul class="messages">
-        <!--looping through messages-->
+            <!--looping through messages-->
             {% for message in messages %}
                 <div class="alert alert-info alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert"
@@ -12,8 +12,8 @@
                     </button>
                     {{ message }}
                 </div>
-{#                <li{% if message.tags %}#}
-{#                    class="{{ message.tags }}"{% endif %}>{{ message }}</li>#}
+                {#                <li{% if message.tags %}#}
+                {#                    class="{{ message.tags }}"{% endif %}>{{ message }}</li>#}
             {% endfor %}
         </ul>
     {% endif %}

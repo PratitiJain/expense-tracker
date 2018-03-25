@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'expense_app.apps.ExpenseAppConfig',
     'rest_framework',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
