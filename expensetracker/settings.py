@@ -119,3 +119,10 @@ STATIC_URL = '/static/'
 
 # message storage
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.dev.json'),
+    }
+}

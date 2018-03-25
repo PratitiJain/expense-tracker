@@ -13,6 +13,10 @@ from expense_app.forms import ExpenseForm
 from expense_app.serializers import ExpenseSerializer
 
 
+def index(request):
+    return render(request, 'index.html')
+
+
 def home(request):
     """Veiw function of home retrieving the expense content sorted in reverse
     order by date and summary of expense """
